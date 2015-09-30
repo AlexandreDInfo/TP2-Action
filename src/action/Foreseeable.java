@@ -1,5 +1,10 @@
 package action;
 
+/**
+ * 	@author Delassus
+ * 	@author Dyment
+ *	This is the foreseeable Action, the base of all Action 
+ */
 public class Foreseeable implements Action {
 
 	private int step;
@@ -8,13 +13,23 @@ public class Foreseeable implements Action {
 	
 // 	Constructor
 	
-	public Foreseeable(int numberOfStep){
+	/**
+	 *	@param numberOfStep the number of step
+	 *	@throws NumberOfStepNegativeOrNull
+	 *	Constructor of foreseeable
+	 */
+	public Foreseeable(int numberOfStep) throws NumberOfStepNegativeorNull{
+		if(numberOfStep <= 0){
+			throw(new NumberOfStepNegativeorNull());
+		}
 		this.step = numberOfStep;
+		this.ready = true;
+		this.finished = false;
 	}
 	
 // Getter / Setter
 	
-	/*
+	/**
 	 *	Getter of step
 	 *	@return step number of step
 	 */
@@ -22,7 +37,7 @@ public class Foreseeable implements Action {
 		return step;
 	}
 	
-	/*
+	/**
 	 *	Setter of step
 	 *	@param step number of step
 	 */
@@ -30,7 +45,7 @@ public class Foreseeable implements Action {
 		this.step = step;
 	}
 	
-	/*
+	/**
 	 *	Getter of ready
 	 *	@return ready
 	 */
@@ -39,7 +54,7 @@ public class Foreseeable implements Action {
 		return ready;
 	}
 	
-	/*
+	/**
 	 *	Setter of ready
 	 *	@param ready
 	 */
@@ -47,7 +62,7 @@ public class Foreseeable implements Action {
 		this.ready = ready;
 	}
 	
-	/*
+	/**
 	 *	Getter of finished
 	 *	@return finished
 	 */
@@ -56,7 +71,7 @@ public class Foreseeable implements Action {
 		return finished;
 	}
 	
-	/*
+	/**
 	 *	Setter of finished
 	 *	@param finished
 	 */
@@ -66,7 +81,7 @@ public class Foreseeable implements Action {
 	
 //	Methods
 	
-	/*
+	/**
 	 *	Do a step of the Action
 	 *	@throws ActionFinishedException when the Foreseeable is finished
 	 */
