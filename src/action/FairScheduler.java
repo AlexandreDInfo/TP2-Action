@@ -2,11 +2,11 @@ package action;
 
 public class FairScheduler extends Scheduler {
 	
-	public void doStep() throws ActionFinishedException
+	public void reallyDoOneStep()
 	{
 		isReady=false;
 		Action nextAction = actionList.get(0);
-		nextAction.doStep();
+		nextAction.reallyDoOneStep();
 		if(nextAction.isFinished())
 			actionList.remove(0);
 	}

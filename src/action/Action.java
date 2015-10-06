@@ -1,7 +1,14 @@
 package action;
 
-public interface Action {
+public abstract class Action {
 
-	public void doStep() throws ActionFinishedException;
-	public boolean isFinished();
+	public void doStep() throws ActionFinishedException
+	{
+		if(this.isFinished())
+			throw new ActionFinishedException();
+		this.reallyDoOneStep();
+	}
+	
+	public abstract void reallyDoOneStep();
+	public abstract boolean isFinished();
 }

@@ -7,11 +7,11 @@ import java.util.ArrayList;
  * @author Dyment
  * This is abstract Scheduler Action, group of Action
  */
-public abstract class Scheduler implements Action {
+public abstract class Scheduler extends Action {
 	
 	protected ArrayList<Action> actionList;
 	protected boolean isReady;
 	
-	public abstract void doStep() throws ActionFinishedException;
+	public abstract void reallyDoOneStep();
 	public abstract boolean isFinished();
 }

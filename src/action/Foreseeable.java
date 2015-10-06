@@ -5,7 +5,7 @@ package action;
  * 	@author Dyment
  *	This is the foreseeable Action, the base of all Action 
  */
-public class Foreseeable implements Action {
+public class Foreseeable extends Action {
 
 	private int step;
 	private boolean finished;
@@ -18,9 +18,9 @@ public class Foreseeable implements Action {
 	 *	@throws NumberOfStepNegativeOrNull
 	 *	Constructor of foreseeable
 	 */
-	public Foreseeable(int numberOfStep) throws NumberOfStepNegativeorNull{
+	public Foreseeable(int numberOfStep) throws NumberOfStepNegativeorNullException{
 		if(numberOfStep <= 0){
-			throw(new NumberOfStepNegativeorNull());
+			throw(new NumberOfStepNegativeorNullException());
 		}
 		this.step = numberOfStep;
 		this.ready = true;
@@ -83,11 +83,8 @@ public class Foreseeable implements Action {
 	
 	/**
 	 *	Do a step of the Action
-	 *	@throws ActionFinishedException when the Foreseeable is finished
 	 */
-	public void doStep() throws ActionFinishedException {
+	public void reallyDoOneStep() {
 		setStep(getStep() - 1);
-		if(this.getStep() <= 0)
-			throw(new ActionFinishedException());
 	}
 }
