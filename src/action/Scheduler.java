@@ -11,7 +11,4 @@ public abstract class Scheduler extends Action {
 	
 	protected ArrayList<Action> actionList;
 	protected boolean isReady;
-	
-	public abstract void reallyDoOneStep();
-	public abstract boolean isFinished();
 }

@@ -11,8 +11,4 @@ public class FairScheduler extends Scheduler {
 			actionList.remove(0);
 	}
 	
-	public boolean isFinished()
-	{
-		return false;
-	}
 }
