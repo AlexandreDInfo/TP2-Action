@@ -6,14 +6,6 @@ public abstract class Action {
 	protected boolean ready;
 	protected boolean finished;
 
-	public void doStep() throws ActionFinishedException
-	{
-		if(this.isFinished())
-			throw new ActionFinishedException();
-		this.reallyDoOneStep();
-	}
-	
-	protected abstract void reallyDoOneStep();
 	// Getter / Setter
 	
 		/**
@@ -65,4 +57,14 @@ public abstract class Action {
 		public void setFinished(boolean finished) {
 			this.finished = finished;
 		}
+// 		Methods
+		
+		public void doStep() throws ActionFinishedException
+		{
+			if(this.isFinished())
+				throw new ActionFinishedException();
+			this.reallyDoOneStep();
+		}
+		
+		protected abstract void reallyDoOneStep();
 }

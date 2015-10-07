@@ -6,16 +6,12 @@ package action;
  *	This is the foreseeable Action, the base of all Action 
  */
 public class Foreseeable extends Action {
-
-	private int step;
-	private boolean finished;
-	private boolean ready;
 	
 // 	Constructor
 	
 	/**
 	 *	@param numberOfStep the number of step
-	 *	@throws NumberOfStepNegativeOrNull
+	 *	@throws NumberOfStepNegativeOrNullException
 	 *	Constructor of foreseeable
 	 */
 	public Foreseeable(int numberOfStep) throws NumberOfStepNegativeorNullException{
