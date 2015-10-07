@@ -7,10 +7,6 @@ package action;
  */
 public class Foreseeable extends Action {
 
-	private int step;
-	private boolean finished;
-	private boolean ready;
-	
 // 	Constructor
 	
 	/**

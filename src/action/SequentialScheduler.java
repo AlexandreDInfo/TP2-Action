@@ -10,9 +10,5 @@ public class SequentialScheduler extends Scheduler {
 		if(nextAction.isFinished())
 			actionList.remove(0);
 	}
-	
-	public boolean isFinished()
-	{
-		return false;
-	}
+
 }
