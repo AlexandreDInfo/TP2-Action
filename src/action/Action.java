@@ -13,7 +13,7 @@ public abstract class Action {
 		this.reallyDoOneStep();
 	}
 	
-	public abstract void reallyDoOneStep();
+	protected abstract void reallyDoOneStep();
 	// Getter / Setter
 	
 		/**

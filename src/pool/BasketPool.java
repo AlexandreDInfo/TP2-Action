@@ -4,7 +4,12 @@ public class BasketPool extends ResourcePool<Basket> {
 
 	public BasketPool(int nbr) {
 		super(nbr);
-		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	protected Basket createResource() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
